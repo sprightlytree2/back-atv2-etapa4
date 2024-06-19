@@ -17,6 +17,18 @@ export const postProjeto = async (request: Request, response: Response) => {
     return response.json(projeto);
 }
 
+export const updateProjeto = async (request: Request, response: Response) => {
+    const {id} = request.params;
+    const projeto = await projetoRepository.update(id, request.body)
+
+    if(projeto.affected){
+        const itemUpdated = await projetoRepository.findOneBy({id: parseInt(id)})
+        return response.json(itemUpdated);
+    }
+    else
+        return response.status(404).json({message: "Projeto não encontrado"})
+}
+
 export const deleteProjeto = async (request: Request, response: Response) => {
     const {id} = request.params;
     const projeto = await projetoRepository.delete(id);
