@@ -1,6 +1,6 @@
 import { Router, Request, Response } from "express";
 
-import { getProjetos, postProjeto } from "./controller/ProjetoController";
+import { deleteProjeto, getProjetos, postProjeto } from "./controller/ProjetoController";
 
 const routes = Router();
 
@@ -10,5 +10,6 @@ routes.get("/home", (request: Request, response: Response) => {
 
 routes.get("/projeto", getProjetos);
 routes.post("/projeto", postProjeto);
+routes.delete("/projeto:id", deleteProjeto)
 
 export default routes;

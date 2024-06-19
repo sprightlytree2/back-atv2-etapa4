@@ -16,3 +16,14 @@ export const postProjeto = async (request: Request, response: Response) => {
     const projeto = await projetoRepository.save(request.body)
     return response.json(projeto);
 }
+
+export const deleteProjeto = async (request: Request, response: Response) => {
+    const {id} = request.params;
+    const projeto = await projetoRepository.delete(id);
+
+    if(projeto.affected){
+        return response.status(204).json({message: "Projeto excluído com sucesso"});
+    }
+    else
+        return response.status(404).json({message: "Projeto não encontrado"})
+}
