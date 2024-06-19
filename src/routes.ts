@@ -1,6 +1,6 @@
 import { Router, Request, Response } from "express";
 
-import { getProjetos } from "./controller/ProjetoController";
+import { getProjetos, postProjeto } from "./controller/ProjetoController";
 
 const routes = Router();
 
@@ -9,6 +9,6 @@ routes.get("/home", (request: Request, response: Response) => {
 });
 
 routes.get("/projeto", getProjetos);
-//routes.post("/projeto", postProjeto);
+routes.post("/projeto", postProjeto);
 
 export default routes;

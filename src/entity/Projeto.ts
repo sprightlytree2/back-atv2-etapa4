@@ -7,12 +7,23 @@ export class Projeto {
     id: number
 
     @Column()
-    firstName: string
+    nome: string
 
     @Column()
-    lastName: string
+    orcamento: number
 
     @Column()
-    age: number
+    tipo_projeto: string
 
+    @Column()
+    contato: string
+
+    @Column()
+    prev_inic: string
+
+    @Column()
+    prev_fim: string
+
+    @Column()
+    descricao: string
 }

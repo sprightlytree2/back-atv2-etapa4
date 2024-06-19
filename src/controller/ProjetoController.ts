@@ -11,12 +11,8 @@ export const getProjetos = async (request: Request, response: Response) => {
     const projetos = await projetoRepository.find();
     return response.json(projetos);
 }
-/*
+
 export const postProjeto = async (request: Request, response: Response) => {
-
-    
-
-    const savedPost = await postRepository.save(newPost);
-
-    return response.json(savedPost);
-} */
+    const projeto = await projetoRepository.save(request.body)
+    return response.json(projeto);
+} 
