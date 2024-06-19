@@ -9,8 +9,8 @@ export class Projeto {
     @Column()
     nome: string
 
-    @Column()
-    orcamento: string
+    @Column("numeric")
+    orcamento: number
 
     @Column()
     tipo_projeto: string
