@@ -12,6 +12,12 @@ export const getProjetos = async (request: Request, response: Response) => {
     return response.json(projetos);
 }
 
+export const getProjeto = async (request: Request, response: Response) => {
+    const {id} = request.params;
+    const projeto = await projetoRepository.findOneBy({id: parseInt(id)});
+    return response.json(projeto);
+}
+
 export const postProjeto = async (request: Request, response: Response) => {
     const projeto = await projetoRepository.save(request.body)
     return response.json(projeto);
