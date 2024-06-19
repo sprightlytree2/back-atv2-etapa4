@@ -10,7 +10,7 @@ routes.get("/home", (request: Request, response: Response) => {
 
 routes.get("/projeto", getProjetos);
 routes.post("/projeto", postProjeto);
-routes.put("/projeto:id", updateProjeto);
-routes.delete("/projeto:id", deleteProjeto);
+routes.put("/projeto/:id", updateProjeto);
+routes.delete("/projeto/:id", deleteProjeto);
 
 export default routes;
